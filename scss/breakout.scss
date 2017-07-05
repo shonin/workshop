@@ -1,0 +1,9 @@
+@import "~@ithaka/bonsai/scss/global";
+
+@include bonsai;
+
+canvas {
+  background: #eee;
+  display: block;
+  margin: 0 auto;
+}

@@ -1,0 +1,57 @@
+{
+  "name": "workshop",
+  "version": "0.1.0",
+  "description": "a javscript workshop",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shonin/workshop.git"
+  },
+  "author": "shonin",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-preset-env": "^1.4.0",
+    "css-loader": "^0.28.0",
+    "eslint": "^3.19.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-react": "^6.10.3",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
+    "lint": "^1.1.2",
+    "node-sass": "^4.5.2",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.1",
+    "stylelint": "^7.10.1",
+    "stylelint-config-standard": "^16.0.0",
+    "stylelint-webpack-plugin": "^0.7.0",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.2"
+  },
+  "eslintConfig": ".eslintrc.js",
+  "scripts": {
+    "clean:build": "rm -rf dist/",
+    "clean:cache": "npm cache clean",
+    "clean:dist": "npm run clean:build && npm run clean:cache && rm -rf node_modules/",
+    "webpack": "./node_modules/.bin/webpack --progress",
+    "prebuild": "npm run clean:build",
+    "build": "npm run webpack",
+    "prebuild:dist": "npm run clean:dist && npm install && npm dedupe",
+    "build:dist": "NODE_ENV=production npm run webpack -- -p",
+    "watch": "npm run webpack -- --watch",
+    "prestart": "npm run build",
+    "start": "./node_modules/.bin/webpack-dev-server --hot",
+    "test": "mocha --compilers js:babel-core/register --reporter spec",
+    "eslint": "./node_modules/.bin/eslint --fix js",
+    "stylelint": "./node_modules/.bin/stylelint '**/*.scss' --syntax scss"
+  },
+  "dependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babelify": "^7.3.0",
+    "@ithaka/bonsai": "~0.2.0",
+    "react": "^15.5.4"
+  }
+}
