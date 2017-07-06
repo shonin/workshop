@@ -15,7 +15,9 @@ module.exports = {
     entry: {
         "js/index.bundle.js": "./js/index.js",
         "js/tour.bundle.js": "./js/tour.js",
+        "js/toneflow.bundle.js": "./js/toneflow.js",
         "css/breakout.css": "./scss/breakout.scss",
+        "css/toneflow.css": "./scss/toneflow.scss",
         "css/tour.css": "./scss/tour.scss"
     },
     devtool: process.env.NODE_ENV === 'production' ? "#hidden-source-map" : "#inline-source-map",

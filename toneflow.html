@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Toneflow
+    </title>
+    <link rel="stylesheet" href="./dist/css/toneflow.css">
+</head>
+<body>
+<div class="row">
+    <div class="columns txtc">
+        <h1>Toneflow</h1>
+        <h3>by Gregory Tippett</h3>
+        <button id="start" class="button">Start</button>
+    </div>
+</div>
+<div class="row">
+    <div class="columns small-2 small-offset-2">
+        <label for="bpm">BPM</label>
+        <input type="number" id="bpm" value="30" min="1" max="600">
+    </div>
+    <div class="columns small-2">
+        <label for="saturation">Saturation %</label>
+        <input type="number" id="saturation" value="100" max="100" min="0">
+    </div>
+    <div class="small-2 columns">
+        <label for="note">Note</label>
+        <select id="note"></select>
+    </div>
+    <div class="columns small-2">
+        <label for="fade">Fade (in seconds)</label>
+        <input type="number" id="fade" value="0" step="0.1" min="0">
+    </div>
+</div>
+<div class="row">
+    <div class="columns">
+        <div id="audio-root"></div>
+    </div>
+</div>
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>-->
+<script src="./dist/js/toneflow.bundle.js"></script>
+</body>
+</html>
